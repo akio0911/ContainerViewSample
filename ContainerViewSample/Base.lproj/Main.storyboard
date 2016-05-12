@@ -36,10 +36,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-en-CZK">
                                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
                                                         <state key="normal" title="Add"/>
+                                                        <connections>
+                                                            <action selector="pressAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fka-Qj-WIi"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3k-Um-FQm">
                                                         <rect key="frame" x="83" y="0.0" width="72" height="30"/>
                                                         <state key="normal" title="RemoveAll"/>
+                                                        <connections>
+                                                            <action selector="pressRemoveAllButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tby-3g-dxR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -83,7 +89,7 @@
                                             <rect key="frame" x="15" y="0.0" width="530" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
