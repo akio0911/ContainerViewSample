@@ -62,5 +62,12 @@ class ViewController: UIViewController {
     private var tableViewControllers: [TableViewController] {
         return childViewControllers.map{ $0 as! TableViewController }
     }
+    
+    @IBAction func changeSegment(sender: AnyObject) {
+        guard let segment = sender as? UISegmentedControl else { return }
+        guard let table = Table(rawValue: segment.selectedSegmentIndex) else { return }
+        
+        displayTable(table)
+    }
 }
 
