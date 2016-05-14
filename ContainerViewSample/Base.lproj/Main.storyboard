@@ -81,6 +81,7 @@
                     <connections>
                         <outlet property="containerView1" destination="d6A-Rl-f0a" id="4Wx-eF-PyI"/>
                         <outlet property="containerView2" destination="w2V-yU-Wjl" id="d9d-SG-qvc"/>
+                        <outlet property="tableSegment" destination="Wln-Al-yXX" id="63P-Vt-dpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -18,19 +18,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView1: UIView!
     @IBOutlet weak var containerView2: UIView!
     
-    var tableViewController: TableViewController {
-        return childViewControllers.first as! TableViewController
+    @IBOutlet weak var tableSegment: UISegmentedControl!
+    
+    private var displayTableViewController: TableViewController {
+        return tableViewControllers[tableSegment.selectedSegmentIndex]
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         tableViewControllers[Table.Table1.rawValue].items
-            = (1...30).map{ "Table1 Row " + $0.description }
+            = (1...10).map{ "Table1 Row " + $0.description }
         
         tableViewControllers[Table.Table2.rawValue].items
-            = (1...30).map{ "Table2 Row " + $0.description }
+            = (1...10).map{ "Table2 Row " + $0.description }
         
         displayTable(.Table1)
     }
@@ -41,11 +43,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pressAddButton(sender: AnyObject) {
-        tableViewController.addRow()
+        displayTableViewController.addRow()
     }
 
     @IBAction func pressRemoveAllButton(sender: AnyObject) {
-        tableViewController.removeAllRow()
+        displayTableViewController.removeAllRow()
     }
     
     private func displayTable(table: Table) {
