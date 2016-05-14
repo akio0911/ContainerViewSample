@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    var items: [Int] = [1, 2, 3]
+    var items: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = items[indexPath.row].description
+        cell.textLabel?.text = items[indexPath.row]
         return cell
     }
     
     internal func addRow() {
-        items.append( items.count + 1 )
+        items.append( String(items.count + 1) )
         let indexPath = NSIndexPath(forRow: items.count - 1, inSection: 0)
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }

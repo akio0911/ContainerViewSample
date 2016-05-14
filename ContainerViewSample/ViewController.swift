@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    enum Table {
+    enum Table: Int {
         case Table1
         case Table2
     }
@@ -25,6 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableViewControllers[Table.Table1.rawValue].items
+            = (1...30).map{ "Table1 Row " + $0.description }
+        
+        tableViewControllers[Table.Table2.rawValue].items
+            = (1...30).map{ "Table2 Row " + $0.description }
         
         displayTable(.Table1)
     }
@@ -51,6 +57,10 @@ class ViewController: UIViewController {
             containerView1.hidden = true
             containerView2.hidden = false
         }
+    }
+    
+    private var tableViewControllers: [TableViewController] {
+        return childViewControllers.map{ $0 as! TableViewController }
     }
 }
 
