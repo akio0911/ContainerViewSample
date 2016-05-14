@@ -25,13 +25,13 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="d6A-Rl-f0a">
+                            <containerView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="d6A-Rl-f0a" userLabel="Container View 1">
                                 <rect key="frame" x="20" y="56" width="560" height="422"/>
                                 <connections>
                                     <segue destination="RGy-rf-M32" kind="embed" id="Sxl-g1-LXO"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="w2V-yU-Wjl">
+                            <containerView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="w2V-yU-Wjl" userLabel="Container View 2">
                                 <rect key="frame" x="20" y="56" width="560" height="422"/>
                                 <connections>
                                     <segue destination="hUb-xf-1jg" kind="embed" id="w1q-t2-LdY"/>
@@ -75,6 +75,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="beg-9l-Cum"/>
+                    <connections>
+                        <outlet property="containerView1" destination="d6A-Rl-f0a" id="4Wx-eF-PyI"/>
+                        <outlet property="containerView2" destination="w2V-yU-Wjl" id="d9d-SG-qvc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

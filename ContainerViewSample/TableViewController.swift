@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    var items: [Int] = []
+    var items: [Int] = [1, 2, 3]
     
     override func viewDidLoad() {
         super.viewDidLoad()

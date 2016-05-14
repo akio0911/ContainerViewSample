@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    enum Table {
+        case Table1
+        case Table2
+    }
+    
+    @IBOutlet weak var containerView1: UIView!
+    @IBOutlet weak var containerView2: UIView!
+    
     var tableViewController: TableViewController {
         return childViewControllers.first as! TableViewController
     }
@@ -17,6 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        displayTable(.Table1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +40,17 @@ class ViewController: UIViewController {
 
     @IBAction func pressRemoveAllButton(sender: AnyObject) {
         tableViewController.removeAllRow()
+    }
+    
+    private func displayTable(table: Table) {
+        switch table {
+        case .Table1:
+            containerView1.hidden = false
+            containerView2.hidden = true
+        case .Table2:
+            containerView1.hidden = true
+            containerView2.hidden = false
+        }
     }
 }
 
